@@ -1,0 +1,115 @@
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 15px;
+  justify-items: center;
+  align-items: center;
+  //padding: 20px;
+  //border: 1px solid darkred;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: filter 0.3s linear;
+  min-height: 331.23px;
+  &:active{
+	filter: blur(1px);
+  }
+  &:hover{
+	opacity: .98;
+  }
+  
+  &__like{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	backdrop-filter: blur(1px);
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: grid;
+	place-items: center;
+	background: rgba(243, 244, 246, 0.61) url('/assets/images/icons/like.svg') no-repeat center;
+	transition: background-color .3s linear;
+	
+	&:hover{
+	  opacity: .98;
+	}
+	&:active{
+	  transform: scale(.98);
+	}
+  }
+  
+  &__img{
+	width: 100%;
+	//height: 100%;
+	object-fit: cover;
+  }
+  
+  &__info_text{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: space-between;
+	width: 100%;
+	
+  }
+  &__release_date{
+	font-family: 'Montserrat 300';
+	font-size: 12px;
+	line-height: 16px;
+	color: #9CA3AF;
+  }
+  &__title{
+	font-family: 'Inter 500';
+	font-size: 18px;
+	line-height: 23px;
+	color:#ccc;
+  }
+  &__rating{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	width: 100%;
+  }
+  &__imdb_wrap{
+	display: flex;
+	align-items: center;
+	
+	img{
+	  width: 35px;
+	  margin-right: 10px;
+	}
+	span{
+	  font-family: 'Montserrat 300';
+	  font-size: 12px;
+	}
+  }
+  
+  &__vote_count_wrap{
+	display: flex;
+	align-items: center;
+	.movie-card__tomato{
+	  width: 16px;
+	  height: 17px;
+	  margin-right: 10px;
+	}
+	span{
+	  font-family: 'Montserrat 300';
+	  font-size: 12px;
+	  line-height: 12px;
+	  color: #ccc;
+	}
+  }
+}

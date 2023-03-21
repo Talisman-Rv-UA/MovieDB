@@ -1,0 +1,96 @@
+//`
+//<div class="wrap_center_middle">
+//	<div class="modal">
+//		<div class="modal__content"><h1>Hello World</h1></div>
+//		<div class="modal__backdrop"></div>
+//  </div>
+//</div>
+//`
+
+.wrap_center_middle{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(138, 43, 226, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  .modal{
+	$modalWidth: 1024px;
+	max-width: $modalWidth;
+	width: 80%;
+	background-color: coral;
+	position: relative;
+	padding: 10px;
+	overflow-y: auto;
+	max-height: 80vh;
+	border-radius: 5px;
+	opacity: 0.1;
+	visibility: hidden;
+	transition: opacity 0.3s ease;
+	
+	
+	&.show{
+	  opacity: 1;
+	  visibility: visible;
+	}
+	
+	.modal__content{
+	  z-index: 1000;
+	}
+	
+	
+	.modal__backdrop{
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  z-index: -1;
+	}
+	
+	
+	
+	.close_button{
+	  position: absolute;
+	  width: 20px;
+	  top: 10px;
+	  right: 10px;
+	  cursor: pointer;
+	  
+	  &:active{
+		transform: scale(.97);
+	  }
+	  
+	  &:hover{
+		opacity: .8;
+	  }
+	  
+	}
+  }
+  
+  
+  /* width */
+  ::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: blueviolet;
+	//TODO
+	border-radius: 10px;
+  }
+  
+}
+

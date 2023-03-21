@@ -1,0 +1,16 @@
+@import "./mixins/mixins";
+@import './base/base';
+
+body {
+  background: #181818;
+  font-family: 'Inter 400';
+  color: white;
+}
+.container {
+  $content-width: 1440px;
+  $container-offset: 15px;
+  $container-width: calc($content-width + (($container-offset) * 2));
+  max-width: $container-width;
+  padding: $container-offset;
+  margin: 0 auto;
+}
